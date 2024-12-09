@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    char ch, *ptr;
+    int upperCount = 0, lowerCount = 0;
+
+    ptr = &ch;
+
+    while (1) {
+        printf("Enter the character: ");
+        scanf(" %c", ptr);
+
+        if (*ptr == '*') {
+            break;
+        }
+
+        if (isupper(*ptr)) {
+            printf("%c\n", tolower(*ptr));
+            upperCount++;
+        } else if (islower(*ptr)) {
+            printf("%c\n", toupper(*ptr));
+            lowerCount++;
+        }
+    }
+
+    printf("Total number of upper case characters = %d\n", upperCount);
+    printf("Total number of lower case characters = %d\n", lowerCount);
+
+    return 0;
+} 
